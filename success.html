@@ -23,10 +23,36 @@
 
 
 
+    <!-- <link href="default.css" rel="stylesheet">
+    <script>
+            // Load app.js script after document has rendered.
+            var script = document.createElement('script');
+            script.src = 'app.js';
+            script.type = 'text/javascript';
+            document.getElementsByTagName('head')[0].appendChild(script);
+        </script>
+    -->
+
+
+
   </head>
 
   <body id="page-top">
-    <script src="fireworks.js"></script>
+    <div id="viewport" style="width: 640px; height: 480px;">
+      <canvas id="sky" width="640" height="480"></canvas>
+      <!-- Based on public domain image
+           https://pixabay.com/en/aeroplane-aircraft-airplane-flight-161999/ -->
+    </div>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="celebrate.js"></script>
+    <script type="text/javascript">
+        $(function() {
+            fillBanner('#banner');
+            var anim = animate('#sky');
+            setTimeout(function() { anim.stop(); }, 60000);
+        });
+    </script>
+
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
       <div class="container">
